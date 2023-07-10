@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>S!S Café</title>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="imagem/png" href="imagens/logo.png" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- jQuery library -->
+    <script src="js/jquery.min.js"></script>
+
+<!-- Popper JS -->
+    <script src="js/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <link rel='stylesheet' href="css/all.css"> 
+    
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="css/folha.css" type="text/css"> 
+    
+
+</head>
+
+<body>
+
+    <section>
+
+        <article class="row">
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content" id="modal_form">
+                        <div class="modal-header ">
+                            <h4 class="modal-title font-weight-bold" id="titulo_modals">Entre em contato</h4>
+                            <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" action="bd/insert.php">
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome Completo" required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" maxlength="11" id="telefone" name="telefone" class="form-control cel-sp-mask" required placeholder="Telefone - (xx) xxxx-xxxx">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Seu email">
+                                </div>
+                                <div class="form-group">
+                                    <textarea rows="4" id="mensagem" name="mensagem" cols="136" placeholder="Sua mensagem..." class="form-control" required></textarea>
+                                    <small id="mensagem" class="form-text text-muted text-white">Nunca vamos compartilhar seus dados com ninguém.</small>
+                                </div>
+                                <button type="submit" id="botao_form" class="btn btn-primary" onclick="submit()">Enviar</button>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+        <br>
+
+
+    </section>
+
+    <div id="mySidenav" class="sidenav">
+        <div class="row">
+            <h1 class="col-2 col-sm-2"><img src="imagens/logo.png" alt="Logo Café S!S Bar"></h1>
+            <div class=" col-10 col-sm-10"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            </div>
+        </div>
+
+        <ul class="font-weight-bold">
+            <li><a href="#header" onclick="closeNav()" class="mg">Home</a></li>
+            <li><a href="cardapio.html" onclick="closeNav()">Cardápio</a></li>
+            <li><a href="sobre.html" onclick="closeNav()">Sobre</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#myModal" onclick="closeNav()">Contato</a></li>
+        </ul>
+
+
+
+    </div>
+
+
+
+    <div>
+
+        <header class="top-container row img-fluid">
+            <figure class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"><img class="img-fluid" src="imagens/logo.png" id="logo" alt="Logo S!S Café" title="Logo S!S Café"></figure>
+
+            <article class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 text-justify text-white" id="txt_header" style="color:black;"><b>A significado de SIS veio da criação da logo do café, que tenta simular a fumaça de uma panela, assim cada um dos S são simulações de fumaça. O significado da palavra sis vem de uma gíria em inglês que significa irmãs.</b></article>
+        </header>
+        
+    </div>
+
+        <nav id="header" class="row header navbar navbar-expand-sm navbar-expand-md navbar-expand-lg bg-dark">
+
+            <h1 class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                   <a class="navbar-brand" href="index.html">
+                       <img src="imagens/logo.png" alt="logo" style="width:50px;cursor:pointer;" ><span class="font-weight-bold pl-3">Café S!S Bar</span>
+                
+                  </a>
+                    
+                </h1>
+            <button id="button_menu" class="navbar-toggler" type="button" data-target="#mySidenav" onclick="openNav()">&#9776;
+                <span id="button_menu" class="" onclick="openNav()"></span>
+            </button>
+
+            <div class="col-md-5 col-lg-6 col-xl-7"> </div>
+
+
+            <div class="col-md-5 col-lg-4 col-xl-3  pr-3 collapse navbar-collapse " id="collapsibleNavbar">
+
+
+                <ul id="nav" class="navbar-nav col-md-5 col-lg-4 col-xl-3 menu text-center font-weight-bold">
+                    <li class="nav-item"><a href="#header" class="nav-link" >Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <h1 class="text-center mt-5 mb-2"><b>Bem-vindo ao site do SIS café bar</b></h1>
+        
+        <h1 class="text-center mb-5">Explore e conheça um pouco sobre o nosso restaurante</h1>
+
+
+        <div id="demo" class="row carousel slide mt-1" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            
+            <div class="carousel-inner row">
+                <div class="carousel-item ">
+                    <img src="imagens/carosel1.png" alt="Los Angeles" class="img-fluid">
+                    <div class="carousel-caption">
+                        <h3> <a href="cardapio.html" style="color:FF7900;text-shadow:black 0px 1px 1px;font-weight:bolder;">Pratos Diários</a></h3>
+                        <p> <a href="cardapio.html" style="color:FF7900;text-shadow:black 0px 1px 1px;font-weight:bolder;">Venha conferir e apreciar nossas delícias!</a></p>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img src="imagens/foto_carrosel.jpg" alt="Chicago" class="img-fluid">
+                    <div class="carousel-caption">
+                        <h3><a href="sobre.html" style="color:FF7900;text-shadow:black 0px 1px 1px;font-weight:bolder;">S!S Café Bar</a></h3>
+                        <p><a href="sobre.html" style="color:FF7900;text-shadow:black 0px 1px 1px;font-weight:bolder;">Conheça um pouco da nossa história!</a></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/carosel3.jpg" alt="New York" class="img-fluid">
+                    <div class="carousel-caption">
+                        <h3><a href="cardapio.html" style="color:FF7900;text-shadow:black 0px 1px 1px;font-weight:bolder;">Cardápio</a></h3>
+                        <p><a href="cardapio.html" style="color:FF7900;text-shadow:black 0px 1px 1px;font-weight:bolder;">Clique e conheça a nossa grande variedade!</a></p>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+        
+    </div>
+
+        <main class="container">
+
+<br><br>
+
+        </main>
+
+        <footer class="bg-dark row">
+            
+            
+            
+            <p class="text-center align-middle text-white col-md-10" id="txt_footer">&copy;Copyright 2019. Todos os direitos reservados</p>
+            <a href="https://www.instagram.com/sis_cafe_bar/" id="instaa" class="col-md-1 text-center" target="_blank"><i class='fab fa-instagram' id="ico_insta"></i></a>
+            <a href="https://www.facebook.com/siscafebar/" target="_blank"  class="col-md-1 text-center" id="facebook"><i class="fab fa-facebook-square  " id="ico_facebook"></i></a>
+
+        </footer>
+
+    <script src="js/scripts.js"></script>
+    
+</body>
+
+</html>

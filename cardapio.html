@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>S!S Café</title>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="imagem/png" href="imagens/logo.png" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- jQuery library -->
+    <script src="js/jquery.min.js"></script>
+
+<!-- Popper JS -->
+    <script src="js/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+  
+    
+    <link rel='stylesheet' href="css/all.css"> 
+    
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="css/folha.css" type="text/css">
+
+</head>
+
+<body>
+    
+     <section>
+
+        <article class="row">
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content" id="modal_form">
+                        <div class="modal-header ">
+                            <h5 class="modal-title font-weight-bold" id="titulo_modals">Entre em contato</h5>
+                            <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" action="bd/insert.php">
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome Completo" required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" maxlength="11" id="telefone" name="telefone" class="form-control cel-sp-mask" required placeholder="Telefone - (xx) xxxx-xxxx">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Seu email">
+                                </div>
+                                <div class="form-group">
+                                    <textarea rows="4" id="mensagem" name="mensagem" cols="136" placeholder="Sua mensagem..." class="form-control" required></textarea>
+                                    <small id="mensagem" class="form-text text-muted text-white">Nunca vamos compartilhar seus dados com ninguém.</small>
+                                </div>
+                                <button type="submit" id="botao_form" class="btn btn-primary" onclick="submit()">Enviar</button>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+        <br>
+
+
+    </section>
+     
+    
+
+       <div id="mySidenav" class="sidenav">
+        <div class="row">
+            <h1 class="col-2 col-sm-2"><img src="imagens/logo.png" alt="Logo Café S!S Bar"></h1>
+            <div class=" col-10 col-sm-10"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            </div>
+        </div>
+
+        <ul class="font-weight-bold">
+            <li><a href="index.html" onclick="closeNav()" class="mg">Home</a></li>
+            <li><a href="#header" onclick="closeNav()">Cardápio</a></li>
+            <li><a href="sobre.html" onclick="closeNav()">Sobre</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#myModal" onclick="closeNav()">Contato</a></li>
+        </ul>
+
+
+
+    </div>
+    
+        <div>
+
+            <header class="top-container row">
+                <figure class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"><img class="img-fluid" src="imagens/logo.png" id="logo" alt="Logo S!S Café" title="Logo S!S Café"></figure>
+
+                <article class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 text-justify text-white" id="txt_header"><b>A significado de SIS veio da criação da logo do café, que tenta simular a fumaça de uma panela, assim cada um dos S são simulações de fumaça. O significado da palavra sis vem de uma gíria em inglês que significa irmãs.</b></article>
+            </header>
+            
+    </div>
+
+           
+    <nav id="header" class="row header navbar navbar-expand-sm navbar-expand-md navbar-expand-lg bg-dark font-weight-bold">
+
+            <h1 class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                   <a class="navbar-brand font-weight-bold" href="index.html">
+                       <img src="imagens/logo.png" alt="logo" style="width:50px;cursor:pointer;" ><span class="pl-3">Café S!S Bar</span>
+                
+                  </a>
+                    
+                </h1>
+            <button id="button_menu" class="navbar-toggler" type="button" data-target="#mySidenav" onclick="openNav()">&#9776;
+                <span id="button_menu" class="" onclick="openNav()"></span>
+            </button>
+
+            <div class="col-md-5 col-lg-6 col-xl-7"> </div>
+
+
+            <div class="col-md-5 col-lg-4 col-xl-3 pr-3 collapse navbar-collapse font-weight-bold " id="collapsibleNavbar">
+
+
+                <ul id="nav" class="navbar-nav col-md-5 col-lg-5 col-xl-5 menu text-center font-weight-bold">
+                    <li class="nav-item"><a href="index.html" class="nav-link" >Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#header">Cardápio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Contato</a></li>
+                </ul>
+            </div>
+    </nav>
+
+
+            
+
+            <main class="container">
+                
+                    <h2 class="text-center mt-5"><b>Cardápio</b></h2>
+                  <br>
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs font-weight-bold">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#home">Pratos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#menu1">Lanches</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#menu2">Sobremesas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#menu3">Bebidas</a>
+                    </li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content" style="display:table;">
+                   
+                    <div id="home" class="container tab-pane active"> <br>
+                      
+                      <p><b>Veja os pratos do dia de uma forma diferente </b></p>
+                       
+                        <div id="myBtnContainer" class="">
+                            
+                              <button class="btnc activef" onclick="filterSelection('all')"> Pratos </button>
+                             
+                           
+                              <button class="btnc" onclick="filterSelection('seg')"> seg</button>
+                              <button class="btnc" onclick="filterSelection('terca')"> ter</button>
+                              <button class="btnc" onclick="filterSelection('qua')"> qua</button>
+                              <button class="btnc" onclick="filterSelection('qui')"> qui</button>
+                              <button class="btnc" onclick="filterSelection('sex')"> sex</button>
+                              <button class="btnc" onclick="filterSelection('sab')"> sab</button>
+                            </div>
+                             
+                            <br>
+                            <br><br><br>
+
+                            <div class="containerf">
+                                  <div class="filterDiv"> 
+                                  <div class="divtitle"><h5>Filé de frango<div>&nbsp;</div></h5></div>
+                                  <div class="divdescription"><p>arroz, feijão, salada e batata frita</p></div>
+                                  <div class="divprice"><p>RS21,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+  
+                                </div>
+                                
+                                 <div class="filterDiv"> 
+                                  <div class="divtitle"><h5>Omelete<div>&nbsp;</div></h5></div>
+                                  <div class="divdescription"><p>arroz, feijão, salada e batata frita</p></div>
+                                  <div class="divprice"><p>RS21,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                </div>
+                                   
+                                    <div class="filterDiv"> 
+                                  <div class="divtitle"><h5>Contra filet<div>&nbsp;</div></h5></div>
+                                  <div class="divdescription"><p>arroz, feijão, salada e batata frita</p></div>
+                                  <div class="divprice"><p>RS24,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                     <div class="filterDiv seg"> 
+                                  <div class="divtitle"><h5>Filé mignon ao molho funghi &nbsp;</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão, salada e  batata corada</p></div>
+                                  <div class="divprice"><p>RS35,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                     <div class="filterDiv seg"> 
+                                  <div class="divtitle"><h5>Filé de frango empanado c/ creme de espinafre</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS30,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                     <div class="filterDiv seg"> 
+                                  <div class="divtitle"><h5>Filé de peixe ao molho alcaparra e batata corada</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS33,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                
+                                   <div class="filterDiv terca"> 
+                                  <div class="divtitle"><h5>Baby beef a parmegiana c/ batata frita</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS35,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                      <div class="filterDiv terca"> 
+                                  <div class="divtitle"><h5>Filé de frango ao molho cheese c/ polenta frita</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS30,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                      <div class="filterDiv terca"> 
+                                  <div class="divtitle"><h5>Moussaka de berinjela c/ folhas refogadas</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS33,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                      <div class="filterDiv qua"> 
+                                  <div class="divtitle"><h5>Feijoada light c/ farofa e couve refogada</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS35,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                     <div class="filterDiv qua"> 
+                                  <div class="divtitle"><h5>Frango assado ao molho de ervas c/ farofa temperada</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS30,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                      <div class="filterDiv qua"> 
+                                  <div class="divtitle"><h5>Filé de peixe ao molho de maracujá c/ batata frita</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS33,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                      <div class="filterDiv qui"> 
+                                  <div class="divtitle"><h5>Strogonoff de carne c/ patata palha</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS33,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                     <div class="filterDiv qui"> 
+                                  <div class="divtitle"><h5>Filé de frango grelhado c/ massa ao molho sugo</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS30,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                     <div class="filterDiv qui"> 
+                                  <div class="divtitle"><h5>Salmão grelhado ao molho de limão c/ legumes sauté</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS35,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                     <div class="filterDiv sex"> 
+                                  <div class="divtitle"><h5>Picanha ao alho c/ batata rostie</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS36,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                     <div class="filterDiv sex"> 
+                                  <div class="divtitle"><h5>Muqueca de peixe c/ folhas refogadas</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS30,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                     <div class="filterDiv sex"> 
+                                  <div class="divtitle"><h5>Cordon bleu e creme de milho</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS33,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                     <div class="filterDiv sab"> 
+                                  <div class="divtitle"><h5>Cupim assado ao molho madeira c/ polenta frita</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS35,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                      <div class="filterDiv sab"> 
+                                  <div class="divtitle"><h5>Feijoada light c/ farofa refogada</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS35,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                                     
+                                     <div class="filterDiv sab"> 
+                                  <div class="divtitle"><h5>Filé de frango a parmegiana e batata frita</h5></div>
+                                  <div class="divdescription"><p>arroz, feijão e salada</p></div>
+                                  <div class="divprice"><p>RS33,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                                     </div>
+                        
+                      </div>
+                      
+                      </div>
+                      
+                    
+
+                    
+                    
+                    <div id="menu1" class="container tab-pane fade">
+                     <br>
+                      <p><b>Veja os lanches do sis café bar</b></p>
+                      
+                      <div class="containerf">
+                      
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Pão na chapa</h5>
+                        </div>
+                                
+                                  <div class="divprice">              
+                                      <p>RS3,50</p>
+                                  </div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      
+                    
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle"><h5>Pão na chapa c/ requeijão</h5></div>
+                                
+                                  <div class="divprice"><p>RS4,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      
+                    
+                    
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle"><h5>Pão c/ ovo</h5></div>
+                                
+                                  <div class="divprice"><p>RS5,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                       <div class="divcardapio">
+                      
+                        <div class="divtitle"><h5>Omelete/ Ovos mexidos</h5></div>
+                                
+                                  <div class="divprice"><p>RS6,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                       <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Pão c/ mortadela</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS5,00</p>
+                                  </div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                       <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Peito de peru</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS8,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Misto quente</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS8,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Queijo quente</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS8,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Pão c/ queijo branco</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS9,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Buraco quente</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS10,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Costela</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS10,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Calabresa</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS10,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Carne louca</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS10,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Carne seca</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS10,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Pernil</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS10,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Filé de frango</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS13,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      <div class="divcardapio">
+                      
+                        <div class="divtitle">
+                               <h5>Churrasco</h5>
+                        </div>
+                                
+                                  <div class="divprice"><p>RS10,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      
+                      
+             </div>
+                    
+    
+        </div>             
+                     
+                      
+                    
+                    <div id="menu2" class="container tab-pane fade"><br>
+                      <p><b>Veja as sobremesas do sis café bar</b></p>
+                      
+                       <div class="containerf">
+                      
+                      <div class="divcardapio">
+                      
+                      
+                        <div class="divtitle"><h5>Melão</h5></div>
+                                  
+                                  <div class="divprice"><p>RS5,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                       <div class="divcardapio">
+                      
+                      
+                        <div class="divtitle"><h5>Mamão</h5></div>
+                                  
+                                  <div class="divprice"><p>RS5,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                       <div class="divcardapio">
+                      
+                      
+                        <div class="divtitle"><h5>Salada de frutas</h5></div>
+                                  
+                                  <div class="divprice"><p>RS5,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                       <div class="divcardapio">
+                      
+                      
+                        <div class="divtitle"><h5>Bolo c/ cobertura</h5></div>
+                                  
+                                  <div class="divprice"><p>RS5,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                       <div class="divcardapio">
+                      
+                      
+                        <div class="divtitle"><h5>Pudim de leite</h5></div>
+                                  
+                                  <div class="divprice"><p>RS5,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                       <div class="divcardapio">
+                      
+                      
+                        <div class="divtitle"><h5>Torta holandesa</h5></div>
+                                  
+                                  <div class="divprice"><p>RS10,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                       <div class="divcardapio">
+                      
+                      
+                        <div class="divtitle"><h5>Brownie c/ nozes e sorvete</h5></div>
+                                  
+                                  <div class="divprice"><p>RS15,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                       <div class="divcardapio">
+                      
+                      
+                        <div class="divtitle"><h5>Petit Gateau</h5></div>
+                                  
+                                  <div class="divprice"><p>RS15,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                      
+                    </div>
+                     
+                     
+    </div>
+                    
+                    
+                    
+                    <div id="menu3" class="container tab-pane fade"><br>
+                      <p><b>Veja as bebidas do sis café bar</b></p>
+                           
+                           <div id="myBtnContainerf">
+                              <button class="btnc activeff" onclick="filterSelection('all')">Todas</button>
+                              <button class="btnc" onclick="filterSelection('nao')">S/ álcool</button>
+                              <button class="btnc" onclick="filterSelection('sim')">C/ álcool</button>
+                            </div>
+                            
+                             <br>
+                            <br><br><br>
+                      
+                      <div class="containerff">
+                      
+                             
+                      
+                       <div class="filterDiv nao">
+                           
+                           <div class="divtitle"><h5>Água s/ gás</h5></div>
+                                  
+                                  <div class="divprice"><p>RS3,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                        
+                       <div class="filterDiv nao">
+                      
+                      
+                      <div class="divtitle"><h5>Água c/ gás</h5></div>
+                                  
+                                  <div class="divprice"><p>RS3,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                      
+                      </div>
+                      
+                        
+                         <div class="filterDiv nao">
+                        
+                      
+                      <div class="divtitle"><h5>Refrigerante</h5></div>
+                                  
+                                  <div class="divprice"><p>RS5,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div></div>
+                         <div class="filterDiv nao">
+                    
+                      
+                      <div class="divtitle"><h5>Suco de polpa</h5></div>
+                                  
+                                  <div class="divprice"><p>RS7,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                         <div class="filterDiv nao">
+                        
+                      
+                      <div class="divtitle"><h5>Sucos naturais</h5></div>
+                                  
+                                  <div class="divprice"><p>RS7,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                         <div class="filterDiv nao">
+                      
+                      
+                      <div class="divtitle"><h5>Chocolate gelado</h5></div>
+                                  
+                                  <div class="divprice"><p>RS8,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                         <div class="filterDiv nao">
+                       
+                      
+                      <div class="divtitle"><h5>Vitaminas de frutas</h5></div>
+                                  
+                                  <div class="divprice"><p>RS8,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                         <div class="filterDiv nao">
+                       
+                      
+                      <div class="divtitle"><h5>Café expresso curto</h5></div>
+                                  
+                                  <div class="divprice"><p>RS5,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                         <div class="filterDiv nao">
+                       
+                      
+                      <div class="divtitle"><h5>Café expresso Longo</h5></div>
+                                  
+                                  <div class="divprice"><p>RS5,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                         <div class="filterDiv nao">
+            
+                      
+                      <div class="divtitle"><h5>Café com leite(90ml)</h5></div>
+                                  
+                                  <div class="divprice"><p>RS5,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                         <div class="filterDiv nao">
+                        
+                      
+                      <div class="divtitle"><h5>Café com leite(270ml)</h5></div>
+                                  
+                                  <div class="divprice"><p>RS7,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                         <div class="filterDiv nao">
+                        
+                      
+                      <div class="divtitle"><h5>Café duplo(90ml)</h5></div>
+                                  
+                                  <div class="divprice"><p>RS7,50</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                         <div class="filterDiv nao">
+                       
+                      
+                      <div class="divtitle"><h5>Capuccino(90ml)</h5></div>
+                                  
+                                  <div class="divprice"><p>RS7,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                         <div class="filterDiv nao">
+                       
+                      
+                      <div class="divtitle"><h5>Chococcino(90ml)</h5></div>
+                                  
+                                  <div class="divprice"><p>RS7,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                         <div class="filterDiv nao">
+                       
+                      
+                      <div class="divtitle"><h5>Capuccino(270ml)</h5></div>
+                                  
+                                  <div class="divprice"><p>RS10,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                         <div class="filterDiv nao">
+                        
+                      
+                      <div class="divtitle"><h5>Chococcino(270ml)</h5></div>
+                                  
+                                  <div class="divprice"><p>RS10,00</p></div>
+
+                                  <div class="divbutton">
+                                  <a href="https://www.ifood.com.br/delivery/sao-paulo-sp/sis-cafe-bar-santana/1c5444f4-310e-4f95-96c8-48b9cfb84c00" target="_blank">
+                                  <button type="submit" id="botao_cardapio" class="btn btn-primary">Comprar</button></a>                  
+                                   </div>
+                                   
+                        </div>
+                        
+             </div>   
+                      
+      </div>
+                      
+                     
+</div>   
+            
+            </main>
+
+            <footer class="row bg-dark" id="teste">
+            
+            
+            
+                <p class="text-center align-middle text-white col-md-10" id="txt_footer">&copy;Copyright 2019. Todos os direitos reservados</p>
+                <a href="https://www.instagram.com/sis_cafe_bar/" id="instaa" class="col-md-1 text-center" target="_blank"><i class='fab fa-instagram' id="ico_insta"></i></a>
+                <a href="https://www.facebook.com/siscafebar/" target="_blank" class="col-md-1 text-center" id="facebook"><i class="fab fa-facebook-square" id="ico_facebook"></i></a>
+
+            </footer>
+            
+            <script src="js/scripts.js"></script> 
+     
+</body>
+
+</html>

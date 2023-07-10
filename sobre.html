@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>S!S Café</title>
+   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="imagem/png" href="imagens/logo.png" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- jQuery library -->
+    <script src="js/jquery.min.js"></script>
+
+<!-- Popper JS -->
+    <script src="js/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <link rel='stylesheet' href="css/all.css"> 
+    
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="css/folha.css" type="text/css">
+    
+   
+</head>
+
+<body>
+    <section>
+
+        <article class="row">
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content" id="modal_form">
+                        <div class="modal-header ">
+                            <h4 class="modal-title font-weight-bold" id="titulo_modals">Entre em contato</h4>
+                            <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" action="bd/insert.php">
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome Completo" required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" maxlength="11" id="telefone" name="telefone" class="form-control cel-sp-mask" required placeholder="Telefone - (xx) xxxx-xxxx">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Seu email">
+                                </div>
+                                <div class="form-group">
+                                    <textarea rows="4" id="mensagem" name="mensagem" cols="136" placeholder="Sua mensagem..." class="form-control" required></textarea>
+                                    <small id="mensagem" class="form-text text-muted text-white">Nunca vamos compartilhar seus dados com ninguém.</small>
+                                </div>
+                                <button type="submit" id="botao_form" class="btn btn-primary" onclick="submit()">Enviar</button>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+        <br>
+
+
+    </section>
+    
+     <div id="mySidenav" class="sidenav">
+        <div class="row">
+            <h1 class="col-2 col-sm-2"><img src="imagens/logo.png" alt="Logo Café S!S Bar"></h1>
+            <div class=" col-10 col-sm-10"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            </div>
+        </div>
+
+        <ul class="font-weight-bold">
+            <li><a href="index.html" onclick="closeNav()" class="mg">Home</a></li>
+            <li><a href="cardapio.html" onclick="closeNav()">Cardápio</a></li>
+            <li><a href="#header" onclick="closeNav()">Sobre</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#myModal" onclick="closeNav()" style="text-transform:capitalize;">contato</a></li>
+        </ul>
+
+
+
+    </div>
+
+    
+        <div>
+
+            <header class="top-container row">
+                <figure class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"><img class="img-fluid" src="imagens/logo.png" id="logo" alt="Logo S!S Café" title="Logo S!S Café"></figure>
+
+                <article class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 text-justify text-white" id="txt_header"><b>A significado de SIS veio da criação da logo do café, que tenta simular a fumaça de uma panela, assim cada um dos S são simulações de fumaça. O significado da palavra sis vem de uma gíria em inglês que significa irmãs.</b></article>
+            </header>
+
+             <nav id="header" class="row header navbar navbar-expand-sm navbar-expand-md navbar-expand-lg bg-dark">
+
+            <h1 class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                   <a class="navbar-brand" href="index.html">
+                       <img src="imagens/logo.png" alt="logo" style="width:50px;cursor:pointer;" ><span class="font-weight-bold pl-3">Café S!S Bar</span>
+                
+                  </a>
+                    
+                </h1>
+            <button id="button_menu" class="navbar-toggler" type="button" data-target="#mySidenav" onclick="openNav()">&#9776;
+                <span id="button_menu" class="" onclick="openNav()"></span>
+            </button>
+
+            <div class="col-md-5 col-lg-6 col-xl-7"> </div>
+
+
+            <div class="col-md-5 col-lg-4 col-xl-3 pr-3 collapse navbar-collapse " id="collapsibleNavbar">
+
+
+                <ul id="nav" class="navbar-nav col-md-5 col-lg-5 col-xl-5 menu text-center font-weight-bold">
+                    <li class="nav-item"><a href="index.html" class="nav-link" >Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#header">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#myModal" style="text-transform:capitalize;">contato</a></li>
+                </ul>
+            </div>
+        </nav>
+
+            
+
+            <main class="container">
+                
+                
+
+
+                <div class="content text-justify mt-5 pt-5">
+                    
+                     <h2>S!S Café Bar</h2>
+                       
+                      <section class="row"> 
+                        <figure class="col-md-5">
+                            <img src="imagens/historia.jpg" alt="Faixada S!S Café Bar" class="img-fluid">
+                        </figure>
+                       
+                        <article class="col-md-7">
+                            <p>O S!S Café Bar é fruto de um ideal projetado pela empresária Karina Castanho, o restaurante tem um conceito inovador, buscando o bem-estar do indivíduo, oferecendo uma alimentação saudável e nutritiva, restringindo o excesso de elementos que causam algum dano à saúde, como a redução do uso de óleo e potencializando a preservação dos nutrientes ressaltados com as cores, as texturas e os sabores através da preparação dos alimentos em um equipamento denominado “Forno Combinado”.
+                            A casa atende diferentes públicos e gostos, inicia com o café da manhã e finaliza com porções e lanches. O café da manhã com alimentos preparados na hora, almoço executivo com qualidade e exclusividade do a la carte, através do cuidado da comida caseira somados a velocidade e praticidade necessárias para o dia a dia. No final da tarde inicia o happy hour onde são servidos porções e lanches acompanhados de diferentes tipos de bebidas.
+                            </p>
+                        </article>
+                    </section>
+                    <h2> Equipe </h2>   
+                       
+                    <section class="row">
+                       
+                       <article class="col-md-7">
+                       
+                            <p>A equipe de cozinha é formada por pessoas responsáveis e profissionais, para que o sabor da comida se mantenha de forma inalterada e sem temperos artificiais.
+                            Os atendentes estão abertos às solicitações dos clientes, e desta forma melhorando o atendimento constante com o intuito de surpreender e encantar a todos que frequentam o restaurante.
+                            Nossos colaboradores recebem treinamento para melhor se relacionarem com os clientes e também manter um padrão de qualidade na escolha, armazenamento e preparo dos alimentos que compõem os tipos de comidas.</p>
+                        
+                        </article>
+                       
+                       
+                        <figure class="col-md-5">
+                            <img src="imagens/equipe.jpg" alt="Equipe S!S Café Bar" class="img-fluid">
+                        </figure>
+                        
+                        
+
+
+                    </section>
+
+                    
+                </div>
+
+            </main>
+
+            <footer class="bg-dark row" id="teste">
+            
+            
+            
+            <p class="text-center align-middle text-white col-md-10" id="txt_footer">&copy;Copyright 2019. Todos os direitos reservados</p>
+            <a href="https://www.instagram.com/sis_cafe_bar/" id="instaa" class="col-md-1 text-center" target="_blank"><i class='fab fa-instagram' id="ico_insta"></i></a>
+            <a href="https://www.facebook.com/siscafebar/"  target="_blank" class="col-md-1 text-center" id="facebook"><i class="fab fa-facebook-square  " id="ico_facebook"></i></a>
+
+        </footer>
+
+        </div>
+  
+           <script src="js/scripts.js"></script>
+    
+</body>
+
+</html>
